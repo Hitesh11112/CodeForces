@@ -19,7 +19,7 @@ int main() {
         if(str1.find(str2) != string::npos) {
             cout << 0 << '\n';
         }else{
-            for(i =0;i <=6; ++i) {
+            for(i =0;i <=5; ++i) {
                 s += s;
                 size_t pos = s.find(str2);
                 if(pos != string::npos) {
@@ -35,3 +35,10 @@ int main() {
     }
     return 0;
 }
+// max iteration = 5
+// x = a  = 1
+// x = aa = 2
+// x = aaaa = 4
+// x = aaaaaaaa = 8
+// x = aaaaaaaaaaaaaaaa  16
+// x = aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa = 32
