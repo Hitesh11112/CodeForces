@@ -1,9 +1,14 @@
 {
     "C_Cpp.default.compilerPath": "C:\\mingw64\\bin\\g++.exe",
     "files.associations": {
+        "*.embeddedhtml": "html",
         "*.ejs": "html",
         "iosfwd": "cpp",
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "string_view": "cpp"
     }
 }
