@@ -24,7 +24,7 @@ int main() {
       for (int i = 1; i < nums.size(); ++i) {
         val = (val ^ nums[i]);
       }
-      if(val == 0) {
+      if (val == 0) {
         ans = i;
         break;
       }
