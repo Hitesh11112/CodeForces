@@ -32,19 +32,24 @@ int main() {
       int mod1 = a[i] % k;
       int mod2 = k - mod1;
 
-      if (bModFre.count(mod1)) {
-        bModFre[mod1] -= 1;
-        if (bModFre[mod1] == 0) {
-          bModFre.erase(mod1);
+      auto it1 = bModFre.find(mod1);
+      if (it1 != bModFre.end()) {
+        it1->second -= 1;
+        if (it1->second == 0) {
+          bModFre.erase(it1);
         }
         totalCnt += 1;
-      } else if (bModFre.count(mod2)) {
-        bModFre[mod2] -= 1;
-        if (bModFre[mod2] == 0) {
-          bModFre.erase(mod2);
+      } else {
+        auto it2 = bModFre.find(mod2);
+        if (it2 != bModFre.end()) {
+          it2->second -= 1;
+          if (it2->second == 0) {
+            bModFre.erase(it2);
+          }
+          totalCnt += 1;
         }
-        totalCnt += 1;
       }
+
       if (totalCnt == 2) {
         flag = 1;
         break;
