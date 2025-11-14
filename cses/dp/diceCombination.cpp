@@ -1,22 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int Module = 10e9 + 7;
-
-int solve(int n) {
+const long long Module = 1000000007;
+long long solve(int n, vector<long long> &arr) {
   // base condition
-  if (n == 0)
+  if (n == 0) {
     return 1;
-  if (n > 0)
+  }
+  if (n < 0)
     return 0;
 
+  // Check for the Repetition
+  if (arr[n] != -1)
+    return arr[n];
+
   // algo
-  int cnt = 0;
-  for (int i = 0; i <= 6; ++i) {
+  long long cnt = 0;
+  for (int i = 1; i <= 6; ++i) {
     if (n >= i) {
-      cnt += solve(n - i);
+      cnt = (cnt + solve(n - i, arr)) % Module;
     }
   }
+  arr[n] = cnt;
   return cnt;
 };
 
@@ -26,8 +31,8 @@ int main() {
 
   int n;
   cin >> n;
-
-  cout << solve(n) << endl;
+  vector<long long> arr(n + 1, -1);
+  cout << solve(n, arr) << endl;
 
   return 0;
 }
