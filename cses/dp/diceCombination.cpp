@@ -2,7 +2,10 @@
 using namespace std;
 
 const long long Module = 1000000007;
-long long solve(int n, vector<long long> &arr) {
+
+long long sovleBottomUp() {}
+
+long long solveTopDown(int n, vector<long long> &arr) {
   // base condition
   if (n == 0) {
     return 1;
@@ -18,7 +21,7 @@ long long solve(int n, vector<long long> &arr) {
   long long cnt = 0;
   for (int i = 1; i <= 6; ++i) {
     if (n >= i) {
-      cnt = (cnt + solve(n - i, arr)) % Module;
+      cnt = (cnt + solveTopDown(n - i, arr)) % Module;
     }
   }
   arr[n] = cnt;
@@ -31,8 +34,10 @@ int main() {
 
   int n;
   cin >> n;
-  vector<long long> arr(n + 1, -1);
-  cout << solve(n, arr) << endl;
+  // vector<long long> arr1(n + 1, -1);
+  // cout << solveTopDown(n, arr1) << endl;
+  vecotr<long long> arr2();
+  cout << sovleBottomUp() << endl;
 
   return 0;
 }
