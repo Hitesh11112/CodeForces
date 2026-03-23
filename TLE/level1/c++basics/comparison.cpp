@@ -6,16 +6,8 @@ int main() {
   int a, b;
   char c;
   cin >> a >> c >> b;
-  
-  if(c == '>')  {
-    if(a > b) cout << "Right\n"; 
-    else cout << "Wrong\n"; 
-  }else if(c == '<') {
-    if(a < b) cout << "Right\n"; 
-    else cout << "Wrong\n"; 
-  }else{
-    if(a == b) cout << "Right\n"; 
-    else cout << "Wrong\n"; 
-  }
+
+  if((c == '>' && a > b) || (c == '<' && a < b) || (c == '=' && a == b))  cout << "Right\n"; 
+  else cout << "Wrong\n"; 
   return 0;
 }
